@@ -1,7 +1,7 @@
 {
-  "name": "boiler_plate",
+  "name": "carmila",
   "version": "1.0.0",
-  "description": "TEst app",
+  "description": "React.js front-end application for a restaurant",
   "main": "index.js",
   "author": "Tirip",
   "license": "MIT",
@@ -34,6 +34,7 @@
     "raf": "^3.4.0",
     "react": "^16.0.0",
     "react-addons-shallow-compare": "^15.6.0",
+    "react-bootstrap": "^0.31.5",
     "react-date-picker": "^6.3.2",
     "react-dates": "^12.7.0",
     "react-dom": "^16.0.0",

@@ -1,16 +1,35 @@
 /**
- * Created by HP on 29-Nov-17.
+ * Created by HP on 09-Dec-17.
  */
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
 const Header = () => (
-    <header>
-        <h1>Expensify</h1>
-        <NavLink to="/" activeClassName="is-active" exact={true}>Dashboard</NavLink>
-        <NavLink to="/create" activeClassName="is-active">Create Expense</NavLink>
-        <NavLink to="/help" activeClassName="is-active">Help</NavLink>
-    </header>
+    <div>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-right">
+            <NavLink className="navbar-brand" to="/">C</NavLink>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className="collapse navbar-collapse" id="navbarColor03">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
+                        <NavLink activeClassName="active" className="nav-link" to="/">Home</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink activeClassName="active" className="nav-link" to="/chiefs">Chiefs</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink activeClassName="active" className="nav-link" to="/dishes">Dishes</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink activeClassName="active" className="nav-link" to="/order">Order</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
 );
 
 export default Header;
