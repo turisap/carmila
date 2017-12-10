@@ -3,10 +3,12 @@
  */
 import {createStore, combineReducers} from 'redux';
 import filtersReducer from '../reducers/filters';
+import ordersReducer from '../reducers/orders';
 
 export default () => {
     const store = createStore(combineReducers({
-        filter : filtersReducer
+        filter : filtersReducer,
+        orders : ordersReducer
     }),
         // this line is for not reloading page on clicking navlinks
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
