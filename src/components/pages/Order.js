@@ -2,12 +2,33 @@
  * Created by HP on 09-Dec-17.
  */
 import React from 'react';
+import {connect} from 'react-redux';
+import DishItem from '../DishItem';
 
-export default class Order extends React.Component{
+class Order extends React.Component {
     render () {
         return (
-            <h2>Order page</h2>
+            this.props.orders.map((item, i) => {
+                return (
+                    <div key={i}>
+                        <DishItem
+                            title={item.title}
+                            price={item.price}
+                            description={item.description}
+                            amount={item.amount}
+                        />
+                    </div>
+                )
+            })
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    orders : state.orders.items,
+});
+
+export default connect(mapStateToProps)(Order);
+
+
 

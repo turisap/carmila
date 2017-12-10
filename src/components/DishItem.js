@@ -8,6 +8,7 @@ const DishItem = (props) => (
         <p>{props.title}</p>
         <p>{props.price}</p>
         <p>{props.description}</p>
+        {props.amount && <p>Amount: {props.amount}</p>}
     </div>
 );
 

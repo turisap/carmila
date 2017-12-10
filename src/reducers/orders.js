@@ -39,7 +39,7 @@ const incrementSameItem = (initialItems, additionalItem) => {
                 exist = true;
             }
         });
-        return exist ? initialItems : [...initialItems, additionalItem]
+        return exist ? initialItems : [...initialItems, additionalItem];
     }
     return [additionalItem];
 };
