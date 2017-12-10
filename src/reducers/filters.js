@@ -21,7 +21,7 @@ export default (state = filterReducerDefaultState, action) => {
                 filterBy : action.filterBy
             };
             break;
-        case 'SET_FILTER_PASTA':
+        case 'SET_PASTA_FILTER':
             return {
                 ...state,
                 filterBy : action.filterBy

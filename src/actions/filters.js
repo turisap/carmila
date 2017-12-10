@@ -31,6 +31,6 @@ export const setPastaFilter = () => ({
  */
 export const setDessertFilter = () => ({
     type : 'SET_DESSERT_FILTER',
-    filterBy : 'DESSERT'
+    filterBy : 'DESSERTS'
 });
 
