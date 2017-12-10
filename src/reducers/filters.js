@@ -1,47 +1,40 @@
-import moment from 'moment';
-
-
+/**
+ * Created by HP on 10-Dec-17.
+ */
 
 const filterReducerDefaultState = {
     text : '',
-    sortBy : 'date',
-    startDate : moment().startOf('month'), // start of the currnet month
-    endDate : moment().endOf('month'), // end of the current month
+    filterBy : 'PIZZA'
 };
 
-
-
 export default (state = filterReducerDefaultState, action) => {
-    switch (action.type) {
-        case 'SET_START_DATE':
-            return {
-                ...state,
-                startDate : action.date
-            };
-            break;
-        case 'SET_END_DATE':
-            return {
-                ...state,
-                endDate : action.date
-            };
-            break;
-        case 'SORT_BY_DATE':
-            return {
-                ...state,
-                sortBy : 'date',
-            };
-            break;
-        case 'SORT_BY_AMOUNT':
-            return {
-                ...state,
-                sortBy : 'amount'
-            };
+    switch(action.type) {
         case 'SET_TEXT_FILTER':
             return {
                 ...state,
-                text: action.text
+                text : action.text
             };
+            break;
+        case 'SET_FILTER_PIZZA':
+            return {
+                ...state,
+                filterBy : action.filterBy
+            };
+            break;
+        case 'SET_FILTER_PASTA':
+            return {
+                ...state,
+                filterBy : action.filterBy
+            };
+            break;
+        case 'SET_DESSERT_FILTER':
+            return {
+                ...state,
+                filterBy : action.filterBy
+            };
+            break;
         default:
             return state;
+
     }
-};
+}
