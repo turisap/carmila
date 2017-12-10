@@ -7,15 +7,19 @@ import {categories} from  '../data/data';
 import {setPizzaFilter, setPastaFilter, setDessertFilter} from '../actions/filters';
 
 class DishesFilterForm extends React.Component {
+    state = {
+        activeLink : 'pizza'
+    };
     handleCategoryChange = (e) => {
-        if (e.target.text === 'PIZZA') {
-            //console.log(e.target.text)
-            this.props.setPizzaFilter()
-        } else if (e.target.text === 'PASTA') {
-            //console.log(e.target.text)
+        const filter = e.target.text.toUpperCase();
+        if (filter === 'PIZZA') {
+            this.props.setPizzaFilter();
+            this.setState({activeLink : 'pizza'});
+        } else if (filter === 'PASTA') {
+            this.setState({activeLink : 'pasta'});
             this.props.setPastaFilter()
-        } else if (e.target.text === 'DESSERTS') {
-            //console.log(e.target.text)
+        } else if (filter === 'DESSERTS') {
+            this.setState({activeLink : 'desserts'});
             this.props.setDessertFilter();
         }
     };
@@ -25,7 +29,7 @@ class DishesFilterForm extends React.Component {
             <div>
                 {categories.map((c,i) => {
                     return (
-                        <a key={i} onClick={this.handleCategoryChange}>{c}</a>
+                        <a key={i} className={c.toLowerCase() === this.state.activeLink ? 'active-category' : ''} onClick={this.handleCategoryChange}>{c}</a>
                     )
                 })}
             </div>
