@@ -16,6 +16,7 @@
     "heroku-postbuild": "npm install build:prod"
   },
   "dependencies": {
+    "antd": "^3.0.0",
     "babel-cli": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "1.5.2",
@@ -35,8 +36,6 @@
     "react": "^16.0.0",
     "react-addons-shallow-compare": "^15.6.0",
     "react-bootstrap": "^0.31.5",
-    "react-date-picker": "^6.3.2",
-    "react-dates": "^12.7.0",
     "react-dom": "^16.0.0",
     "react-modal": "^2.2.2",
     "react-redux": "^5.0.6",
