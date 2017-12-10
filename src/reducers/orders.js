@@ -13,7 +13,7 @@ export default (state = orderDefaultReducerState, action) => {
         case 'ADD_ITEM':
             return {
                 ...state,
-                items : [...state.items, action.item]
+                items : incrementSameItem(state.items, action.item)
             };
             break;
         case 'REMOVE_ITEM':
@@ -29,3 +29,17 @@ export default (state = orderDefaultReducerState, action) => {
             return state;
     }
 }
+
+const incrementSameItem = (initialItems, additionalItem) => {
+    if(initialItems.length !== 0) {
+        let exist = false;
+        initialItems.forEach(i => {
+            if (i.title === additionalItem.title) {
+                i.amount++;
+                exist = true;
+            }
+        });
+        return exist ? initialItems : [...initialItems, additionalItem]
+    }
+    return [additionalItem];
+};
