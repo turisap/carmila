@@ -28,3 +28,12 @@ export const fillCredentials = (data) => ({
     type : 'FILL_CREDENTIALS',
     data
 });
+
+/**
+ * Sets pick up time for an order
+ * @param time
+ */
+export const setPickupTime = (time) => ({
+    type : 'SET_PICKUP_TIME',
+    time
+});

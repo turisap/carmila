@@ -4,6 +4,7 @@
 
 const orderDefaultReducerState = {
     items : [],
+    time : undefined,
     name : '',
     email : ''
 };
@@ -25,6 +26,13 @@ export default (state = orderDefaultReducerState, action) => {
                 name : action.data.name,
                 email : action.data.email
             };
+            break;
+        case 'SET_PICKUP_TIME':
+            return {
+                ...state,
+                time : action.time,
+            };
+            break;
         default:
             return state;
     }
