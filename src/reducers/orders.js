@@ -39,15 +39,16 @@ export default (state = orderDefaultReducerState, action) => {
 }
 
 const incrementSameItem = (initialItems, additionalItem) => {
+    const amount = {amount : 1};
     if(initialItems.length !== 0) {
         let exist = false;
         initialItems.forEach(i => {
             if (i.title === additionalItem.title) {
-                i.amount++;
+                i.amount ? i.amount++ : Object.assign(i, amount);
                 exist = true;
             }
         });
-        return exist ? initialItems : [...initialItems, additionalItem];
+        return exist ? initialItems : [...initialItems, Object.assign(additionalItem, amount)];
     }
-    return [additionalItem];
+    return [Object.assign(additionalItem, amount)];
 };
