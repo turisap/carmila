@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render dishes filter component 1`] = `
+<div>
+  <a
+    className="active-category"
+    key="0"
+    onClick={[Function]}
+  >
+    PIZZA
+  </a>
+  <a
+    className=""
+    key="1"
+    onClick={[Function]}
+  >
+    PASTA
+  </a>
+  <a
+    className=""
+    key="2"
+    onClick={[Function]}
+  >
+    DESSERTS
+  </a>
+</div>
+`;

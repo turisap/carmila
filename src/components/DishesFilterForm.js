@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 import {categories} from  '../data/data';
 import {setPizzaFilter, setPastaFilter, setDessertFilter} from '../actions/filters';
 
-class DishesFilterForm extends React.Component {
+export class DishesFilterForm extends React.Component {
     state = {
         activeLink : 'pizza'
     };
@@ -27,7 +27,7 @@ class DishesFilterForm extends React.Component {
     render () {
         return (
             <div>
-                <Input/> // this should be for text filter
+
                 {categories.map((c,i) => {
                     return (
                         <a key={i} className={c.toLowerCase() === this.state.activeLink ? 'active-category' : ''} onClick={this.handleCategoryChange}>{c}</a>
