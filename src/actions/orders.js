@@ -21,7 +21,7 @@ export const removeItem = (title) => ({
 });
 
 /**
- * Removes all same items from order
+ * Removes all same items from order (4 same pizzas for example)
  * @param title
  */
 export const removeAllSameItems = (title) => ({

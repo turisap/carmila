@@ -27,6 +27,7 @@ class DishesFilterForm extends React.Component {
     render () {
         return (
             <div>
+                <Input/> // this should be for text filter
                 {categories.map((c,i) => {
                     return (
                         <a key={i} className={c.toLowerCase() === this.state.activeLink ? 'active-category' : ''} onClick={this.handleCategoryChange}>{c}</a>
