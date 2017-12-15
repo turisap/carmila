@@ -10,7 +10,7 @@ const DishItem = (props) => (
         <p>{props.title}</p>
         <p>{props.price}</p>
         <p>{props.description}</p>
-        {props.amount && <p>Amount: {props.amount}</p>}
+        {(props.amount > 0) && <p>Amount: {props.amount}</p>}
         {(props.orderPage && props.amount > 0) && (
             <div>
                 <p onClick={() => props.removeItem(props.title)}>-</p>

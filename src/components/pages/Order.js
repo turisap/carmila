@@ -46,7 +46,7 @@ class Order extends LinkedComponent {
 
         return (
             <div>
-                {this.props.orders && this.props.orders.map((item, i) => {
+                {this.props.orders && this.props.orders.items.map((item, i) => {
                     return (
                         <div key={i}>
                             <DishItem
@@ -90,7 +90,7 @@ const FormInput = ({...props}) => (
 );
 
 const mapStateToProps = (state) => ({
-    orders : state.orders.items,
+    orders : state.orders,
 });
 
 const mapDispatchToProps = (dispatch, props) => ({

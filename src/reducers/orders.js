@@ -19,9 +19,12 @@ export default (state = orderDefaultReducerState, action) => {
             break;
         case 'REMOVE_ITEM':
             const newState = {...state};
-            newState.items.forEach(item => {
+            newState.items.forEach((item,index,array) => {
                 if (item.title === action.title) {
                     item.amount--
+                }
+                if (item.amount === 0) {
+                    array.splice(index, 1);
                 }
             });
             return newState;
