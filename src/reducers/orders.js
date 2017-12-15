@@ -53,7 +53,7 @@ export default (state = orderDefaultReducerState, action) => {
     }
 }
 
-const incrementSameItem = (initialItems, additionalItem) => {
+export const incrementSameItem = (initialItems, additionalItem) => {
     const amount = {amount : 1};
     if(initialItems.length !== 0) {
         let exist = false;
