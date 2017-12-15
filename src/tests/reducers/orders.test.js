@@ -8,16 +8,19 @@
 import ordersReducer, {incrementSameItem} from '../../reducers/orders';
 import order from '../fixtures/orders';
 
-let fixOrder = {
-    items : order,
-    time : undefined,
-    name : '',
-    phone : ''
-};
+let fixOrder;
 
 let fixState;
+let orderData;
 
 beforeEach(() => {
+    orderData = [...order];
+    fixOrder = {
+        items : orderData,
+        time : undefined,
+        name : '',
+        phone : ''
+    };
     fixState = {...fixOrder}
 });
 
@@ -35,7 +38,7 @@ test('should set default state for orders', () => {
 test('should increment an existing item in the order list', () => {
     const action = {
         type : 'ADD_ITEM',
-        item : order[0]
+        item : orderData[0]
     };
     const state = ordersReducer(fixOrder, action);
     expect(state).toEqual({
@@ -82,7 +85,7 @@ test('should add a new item to the order list', () => {
     };
     const state = ordersReducer(fixState, action);
     expect(state).toEqual({
-        items : [...order, item],
+        items : [...orderData, item],
         time : undefined,
         name : '',
         phone : ''
@@ -121,9 +124,9 @@ test('should remove all same items from order', () => {
         type : 'REMOVE_ALL_SAME_ITEMS',
         title : 'Margherita'
     };
-    console.log(order);
+    console.log(orderData);
     const state = ordersReducer({
-        items : order,
+        items : orderData,
         time : undefined,
         name : '',
         phone : ''
@@ -135,7 +138,7 @@ test('should remove all same items from order', () => {
                 title: 'Cremeschnitte',
                 price: 4,
                 description : 'test description',
-                amount : undefined
+                amount : 0
             },
             {
                 category: 'PASTA',
@@ -148,5 +151,33 @@ test('should remove all same items from order', () => {
         time  : undefined,
         name  : '',
         phone : ''
+    })
+});
+
+test('should fill user\' credentials', () => {
+    const action = {
+        type : 'FILL_CREDENTIALS',
+        data : {
+            name : 'Turisap',
+            phone : '12345'
+        }
+    };
+    const state = ordersReducer(fixState, action);
+    expect(state).toEqual({
+        ...fixState,
+        name : 'Turisap',
+        phone : '12345'
+    })
+});
+
+test('should set up pick up time', () => {
+    const action = {
+        type : 'SET_PICKUP_TIME',
+        time : '14 Dec 2017 23:34'
+    };
+    const state = ordersReducer(fixState, action);
+    expect(state).toEqual({
+        ...fixState,
+        time : '14 Dec 2017 23:34'
     })
 });
