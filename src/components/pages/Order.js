@@ -10,48 +10,54 @@ import {setPickupTime, fillCredentials} from '../../actions/orders';
 
 class Order extends React.Component {
     state = {
-        error : undefined,
+        timeError : undefined,
+        nameError : undefined,
+        phoneError : undefined,
         name : undefined,
         phone : undefined
     };
 
     onDateChange = (e) => {
         if (!e.isAfter(moment().add(1, 'hour'))) {
-            this.setState({error : 'We need at least one hour to prepare you order'});
+            this.setState({timeError : 'We need at least one hour to prepare you order'});
             this.props.setPickupTime(undefined);
             return;
         }
-        this.setState({error : undefined});
+        this.setState({timeError : undefined});
         this.props.setPickupTime(e.format('Do MMM, HH:mm'));
     };
 
     handleOrderPlacing = (e) => {
         e.preventDefault();
-        if(!this.state.error) {
+        if(!this.state.timeError && !this.state.nameError && !this.state.phoneError) {
             this.props.fillCredentials(this.state)
         }
     };
 
     onNameChange = (e) => {
         if (e.target.value.length <= 2){
-            this.setState({error: 'Name should be at least two characters long'});
+            this.setState({nameError: 'Name should be at least two characters long'});
             return;
         }
+        this.setState({nameError: ''});
         this.setState({name:e.target.value})
     };
 
     onPhoneChange = (e) => {
         if (!this.validatePhoneNumber(e.target.value)){
-            this.setState({error: 'Please enter a valid phone number'});
+            this.setState({phoneError: 'Please enter a valid phone number'});
             return;
         }
+        this.setState({phoneError: ''});
         this.setState({phone:e.target.value})
     };
 
     validatePhoneNumber = (phone) => {
         if (phone.length <= 2) return false;
         return true;
-    }
+    };
+
+    checkInputs = ()
 
     render () {
         return (
@@ -71,7 +77,9 @@ class Order extends React.Component {
                 <form onSubmit={this.handleOrderPlacing}>
                     <input name="name" type="text" onChange={this.onNameChange}/>
                     <input name="phone" type="text" onChange={this.onPhoneChange}/>
-                    {this.state.error && <p className="wrong-time-error">{this.state.inappropriateTimeError}</p>}
+                    {this.state.timeError && <p className="error">{this.state.timeError}</p>}
+                    {this.state.phoneError && <p className="error">{this.state.phoneError}</p>}
+                    {this.state.nameError && <p className="error">{this.state.nameError}</p>}
                     <TimePicker
                         defaultValue={moment().add(1, 'hour')}
                         format={'HH:mm'}
