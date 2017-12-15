@@ -2,6 +2,10 @@
 
 exports[`should render dishes filter component 1`] = `
 <div>
+  <input
+    onKeyDown={[Function]}
+    type="text"
+  />
   <a
     className="active-category"
     key="0"

@@ -5,16 +5,18 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import {DishesFilterForm} from '../../components/DishesFilterForm';
 
-let wrapper, setPizzaFilter, setPastaFilter, setDessertsFilter;
+let wrapper, setPizzaFilter, setPastaFilter, setDessertsFilter, setTextFilter;
 
 beforeEach(() => {
     setPizzaFilter = jest.fn();
     setPastaFilter = jest.fn();
     setDessertsFilter = jest.fn();
+    setTextFilter = jest.fn();
     wrapper = shallow(<DishesFilterForm
         setPizzaFilter={setPizzaFilter}
         setPastaFilter={setPastaFilter}
         setDessertFilter={setDessertsFilter}
+        setTextFilter={setTextFilter}
     />);
 });
 
