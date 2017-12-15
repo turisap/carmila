@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render footer properly 1`] = `
+<div>
+  <footer>
+    <ul>
+      <li>
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/about"
+        >
+          About Us
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          to="/news"
+        >
+          Sign Up For News
+        </NavLink>
+      </li>
+    </ul>
+  </footer>
+</div>
+`;

@@ -9,7 +9,7 @@ import DishesFilterForm from '../DishesFilterForm';
 import { addItem, removeItem, fillCredentials } from '../../actions/orders';
 
 
-class Dishes extends React.Component {
+export class Dishes extends React.Component {
     handleAddButton = (item) => {
         this.props.addItemToOrder(item)
     };
