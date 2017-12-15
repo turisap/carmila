@@ -59,7 +59,7 @@ class Order extends LinkedComponent {
                         </div>
                     )
                 })}
-                {(this.props.orders && this.props.orders.length > 0) &&
+                {(this.props.orders.items && this.props.orders.items.length > 0) &&
                 <form onSubmit={this.handleOrderPlacing}>
                     <FormInput valueLink={nameLink} submitted={this.state.submitted}/>
                     <FormInput valueLink={phoneLink} submitted={this.state.submitted}/>
