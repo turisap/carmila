@@ -124,7 +124,6 @@ test('should remove all same items from order', () => {
         type : 'REMOVE_ALL_SAME_ITEMS',
         title : 'Margherita'
     };
-    console.log(orderData);
     const state = ordersReducer({
         items : orderData,
         time : undefined,
