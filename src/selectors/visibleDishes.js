@@ -3,6 +3,9 @@
  */
 import { dishes } from '../data/data'
 
-export default (filter) => {
+export default (filter, text) => {
+    if (!!text){
+        return dishes.filter(d => d.title.toLowerCase().includes(text));
+    }
     return dishes.filter(d => d.category === filter);
 }

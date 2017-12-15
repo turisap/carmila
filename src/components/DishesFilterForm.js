@@ -4,7 +4,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {categories} from  '../data/data';
-import {setPizzaFilter, setPastaFilter, setDessertFilter} from '../actions/filters';
+import {setPizzaFilter, setPastaFilter, setDessertFilter, setTextFilter} from '../actions/filters';
+
 
 export class DishesFilterForm extends React.Component {
     state = {
@@ -22,12 +23,17 @@ export class DishesFilterForm extends React.Component {
             this.setState({activeLink : 'desserts'});
             this.props.setDessertFilter();
         }
+        this.props.setTextFilter('')
+    };
+
+    handleFilterTextChange = (e) => {
+        this.props.setTextFilter(e.target.value)
     };
 
     render () {
         return (
             <div>
-
+                <input type="text" onKeyDown={this.handleFilterTextChange}/>
                 {categories.map((c,i) => {
                     return (
                         <a key={i} className={c.toLowerCase() === this.state.activeLink ? 'active-category' : ''} onClick={this.handleCategoryChange}>{c}</a>
@@ -42,7 +48,8 @@ const mapDispatchToProps = dispatch => {
     return {
         setPizzaFilter : () => dispatch(setPizzaFilter()),
         setPastaFilter : () => dispatch(setPastaFilter()),
-        setDessertFilter : () => dispatch(setDessertFilter())
+        setDessertFilter : () => dispatch(setDessertFilter()),
+        setTextFilter  : (text) => dispatch(setTextFilter(text))
     }
 };
 

@@ -36,7 +36,7 @@ export class Dishes extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    dishes : visibleDishes(state.filter.filterBy)
+    dishes : visibleDishes(state.filter.filterBy, state.filter.text)
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
