@@ -10,7 +10,7 @@ import {Input} from 'valuelink/tags';
 import DishItem from '../DishItem';
 import {setPickupTime, fillCredentials, removeItem} from '../../actions/orders';
 
-class Order extends LinkedComponent {
+export class Order extends LinkedComponent {
     state = {
         name : '',
         phone : '',

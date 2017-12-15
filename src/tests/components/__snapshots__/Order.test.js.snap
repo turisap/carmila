@@ -1,0 +1,921 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render order page properly 1`] = `
+<div>
+  <div
+    key="0"
+  >
+    <Connect(DishItem)
+      description="test description"
+      orderPage={true}
+      price={4}
+      title="Cremeschnitte"
+    />
+  </div>
+  <div
+    key="1"
+  >
+    <Connect(DishItem)
+      description="test description"
+      orderPage={true}
+      price={5.5}
+      title="Linguine"
+    />
+  </div>
+  <div
+    key="2"
+  >
+    <Connect(DishItem)
+      description="test description"
+      orderPage={true}
+      price={7}
+      title="Margherita"
+    />
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <FormInput
+      submitted={false}
+      valueLink={
+        e {
+          "component": Order {
+            "context": Object {},
+            "handleOrderPlacing": [Function],
+            "links": Object {
+              "name": [Circular],
+              "phone": e {
+                "component": [Circular],
+                "error": "Phone is required",
+                "key": "phone",
+                "value": "",
+              },
+              "submitted": e {
+                "component": [Circular],
+                "key": "submitted",
+                "value": false,
+              },
+              "timeError": e {
+                "component": [Circular],
+                "key": "timeError",
+                "value": undefined,
+              },
+            },
+            "onDateChange": [Function],
+            "props": Object {
+              "fillCredentials": [Function],
+              "orders": Object {
+                "items": Array [
+                  Object {
+                    "amount": undefined,
+                    "category": "PIZZA",
+                    "description": "test description",
+                    "price": 4,
+                    "title": "Cremeschnitte",
+                  },
+                  Object {
+                    "amount": undefined,
+                    "category": "PASTA",
+                    "description": "test description",
+                    "price": 5.5,
+                    "title": "Linguine",
+                  },
+                  Object {
+                    "amount": undefined,
+                    "category": "DESSERT",
+                    "description": "test description",
+                    "price": 7,
+                    "title": "Margherita",
+                  },
+                ],
+                "name": "",
+                "phone": "",
+                "time": undefined,
+              },
+              "setPickupTime": [Function],
+            },
+            "refs": Object {},
+            "state": Object {
+              "name": "",
+              "phone": "",
+              "submitted": false,
+              "timeError": undefined,
+            },
+            "updater": Updater {
+              "_callbacks": Array [],
+              "_renderer": ReactShallowRenderer {
+                "_context": Object {},
+                "_element": <Order
+                  fillCredentials={[Function]}
+                  orders={
+                    Object {
+                      "items": Array [
+                        Object {
+                          "amount": undefined,
+                          "category": "PIZZA",
+                          "description": "test description",
+                          "price": 4,
+                          "title": "Cremeschnitte",
+                        },
+                        Object {
+                          "amount": undefined,
+                          "category": "PASTA",
+                          "description": "test description",
+                          "price": 5.5,
+                          "title": "Linguine",
+                        },
+                        Object {
+                          "amount": undefined,
+                          "category": "DESSERT",
+                          "description": "test description",
+                          "price": 7,
+                          "title": "Margherita",
+                        },
+                      ],
+                      "name": "",
+                      "phone": "",
+                      "time": undefined,
+                    }
+                  }
+                  setPickupTime={[Function]}
+                />,
+                "_forcedUpdate": false,
+                "_instance": [Circular],
+                "_newState": null,
+                "_rendered": <div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={4}
+                      title="Cremeschnitte"
+                    />
+                  </div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={5.5}
+                      title="Linguine"
+                    />
+                  </div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={7}
+                      title="Margherita"
+                    />
+                  </div>
+                  <form
+                    onSubmit={[Function]}
+                  >
+                    <FormInput
+                      submitted={false}
+                      valueLink={[Circular]}
+                    />
+                    <FormInput
+                      submitted={false}
+                      valueLink={
+                        e {
+                          "component": [Circular],
+                          "error": "Phone is required",
+                          "key": "phone",
+                          "value": "",
+                        }
+                      }
+                    />
+                    <TimePicker
+                      align={
+                        Object {
+                          "offset": Array [
+                            0,
+                            -2,
+                          ],
+                        }
+                      }
+                      defaultValue={"1970-01-01T01:00:00.000Z"}
+                      disabled={false}
+                      disabledHours={undefined}
+                      disabledMinutes={undefined}
+                      disabledSeconds={undefined}
+                      focusOnOpen={true}
+                      format="HH:mm"
+                      hideDisabledOptions={false}
+                      onChange={[Function]}
+                      placement="bottomLeft"
+                      prefixCls="ant-time-picker"
+                      transitionName="slide-up"
+                    />
+                    <button
+                      href="#"
+                      id="placeOrder"
+                      type="submit"
+                    >
+                      Place Order
+                    </button>
+                  </form>
+                </div>,
+                "_rendering": false,
+                "_updater": [Circular],
+              },
+            },
+          },
+          "error": "Name is required",
+          "key": "name",
+          "value": "",
+        }
+      }
+    />
+    <FormInput
+      submitted={false}
+      valueLink={
+        e {
+          "component": Order {
+            "context": Object {},
+            "handleOrderPlacing": [Function],
+            "links": Object {
+              "name": e {
+                "component": [Circular],
+                "error": "Name is required",
+                "key": "name",
+                "value": "",
+              },
+              "phone": [Circular],
+              "submitted": e {
+                "component": [Circular],
+                "key": "submitted",
+                "value": false,
+              },
+              "timeError": e {
+                "component": [Circular],
+                "key": "timeError",
+                "value": undefined,
+              },
+            },
+            "onDateChange": [Function],
+            "props": Object {
+              "fillCredentials": [Function],
+              "orders": Object {
+                "items": Array [
+                  Object {
+                    "amount": undefined,
+                    "category": "PIZZA",
+                    "description": "test description",
+                    "price": 4,
+                    "title": "Cremeschnitte",
+                  },
+                  Object {
+                    "amount": undefined,
+                    "category": "PASTA",
+                    "description": "test description",
+                    "price": 5.5,
+                    "title": "Linguine",
+                  },
+                  Object {
+                    "amount": undefined,
+                    "category": "DESSERT",
+                    "description": "test description",
+                    "price": 7,
+                    "title": "Margherita",
+                  },
+                ],
+                "name": "",
+                "phone": "",
+                "time": undefined,
+              },
+              "setPickupTime": [Function],
+            },
+            "refs": Object {},
+            "state": Object {
+              "name": "",
+              "phone": "",
+              "submitted": false,
+              "timeError": undefined,
+            },
+            "updater": Updater {
+              "_callbacks": Array [],
+              "_renderer": ReactShallowRenderer {
+                "_context": Object {},
+                "_element": <Order
+                  fillCredentials={[Function]}
+                  orders={
+                    Object {
+                      "items": Array [
+                        Object {
+                          "amount": undefined,
+                          "category": "PIZZA",
+                          "description": "test description",
+                          "price": 4,
+                          "title": "Cremeschnitte",
+                        },
+                        Object {
+                          "amount": undefined,
+                          "category": "PASTA",
+                          "description": "test description",
+                          "price": 5.5,
+                          "title": "Linguine",
+                        },
+                        Object {
+                          "amount": undefined,
+                          "category": "DESSERT",
+                          "description": "test description",
+                          "price": 7,
+                          "title": "Margherita",
+                        },
+                      ],
+                      "name": "",
+                      "phone": "",
+                      "time": undefined,
+                    }
+                  }
+                  setPickupTime={[Function]}
+                />,
+                "_forcedUpdate": false,
+                "_instance": [Circular],
+                "_newState": null,
+                "_rendered": <div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={4}
+                      title="Cremeschnitte"
+                    />
+                  </div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={5.5}
+                      title="Linguine"
+                    />
+                  </div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={7}
+                      title="Margherita"
+                    />
+                  </div>
+                  <form
+                    onSubmit={[Function]}
+                  >
+                    <FormInput
+                      submitted={false}
+                      valueLink={
+                        e {
+                          "component": [Circular],
+                          "error": "Name is required",
+                          "key": "name",
+                          "value": "",
+                        }
+                      }
+                    />
+                    <FormInput
+                      submitted={false}
+                      valueLink={[Circular]}
+                    />
+                    <TimePicker
+                      align={
+                        Object {
+                          "offset": Array [
+                            0,
+                            -2,
+                          ],
+                        }
+                      }
+                      defaultValue={"1970-01-01T01:00:00.000Z"}
+                      disabled={false}
+                      disabledHours={undefined}
+                      disabledMinutes={undefined}
+                      disabledSeconds={undefined}
+                      focusOnOpen={true}
+                      format="HH:mm"
+                      hideDisabledOptions={false}
+                      onChange={[Function]}
+                      placement="bottomLeft"
+                      prefixCls="ant-time-picker"
+                      transitionName="slide-up"
+                    />
+                    <button
+                      href="#"
+                      id="placeOrder"
+                      type="submit"
+                    >
+                      Place Order
+                    </button>
+                  </form>
+                </div>,
+                "_rendering": false,
+                "_updater": [Circular],
+              },
+            },
+          },
+          "error": "Phone is required",
+          "key": "phone",
+          "value": "",
+        }
+      }
+    />
+    <TimePicker
+      align={
+        Object {
+          "offset": Array [
+            0,
+            -2,
+          ],
+        }
+      }
+      defaultValue={"1970-01-01T01:00:00.000Z"}
+      disabled={false}
+      focusOnOpen={true}
+      format="HH:mm"
+      hideDisabledOptions={false}
+      onChange={[Function]}
+      placement="bottomLeft"
+      prefixCls="ant-time-picker"
+      transitionName="slide-up"
+    />
+    <button
+      href="#"
+      id="placeOrder"
+      type="submit"
+    >
+      Place Order
+    </button>
+  </form>
+</div>
+`;
+
+exports[`should set timeError 1`] = `
+<div>
+  <div
+    key="0"
+  >
+    <Connect(DishItem)
+      description="test description"
+      orderPage={true}
+      price={4}
+      title="Cremeschnitte"
+    />
+  </div>
+  <div
+    key="1"
+  >
+    <Connect(DishItem)
+      description="test description"
+      orderPage={true}
+      price={5.5}
+      title="Linguine"
+    />
+  </div>
+  <div
+    key="2"
+  >
+    <Connect(DishItem)
+      description="test description"
+      orderPage={true}
+      price={7}
+      title="Margherita"
+    />
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <FormInput
+      submitted={false}
+      valueLink={
+        e {
+          "component": Order {
+            "context": Object {},
+            "handleOrderPlacing": [Function],
+            "links": Object {
+              "name": [Circular],
+              "phone": e {
+                "component": [Circular],
+                "error": "Phone is required",
+                "key": "phone",
+                "value": "",
+              },
+              "submitted": e {
+                "component": [Circular],
+                "key": "submitted",
+                "value": false,
+              },
+              "timeError": e {
+                "component": [Circular],
+                "key": "timeError",
+                "value": "We need at least one hour to prepare you order",
+              },
+            },
+            "onDateChange": [Function],
+            "props": Object {
+              "fillCredentials": [Function],
+              "orders": Object {
+                "items": Array [
+                  Object {
+                    "amount": undefined,
+                    "category": "PIZZA",
+                    "description": "test description",
+                    "price": 4,
+                    "title": "Cremeschnitte",
+                  },
+                  Object {
+                    "amount": undefined,
+                    "category": "PASTA",
+                    "description": "test description",
+                    "price": 5.5,
+                    "title": "Linguine",
+                  },
+                  Object {
+                    "amount": undefined,
+                    "category": "DESSERT",
+                    "description": "test description",
+                    "price": 7,
+                    "title": "Margherita",
+                  },
+                ],
+                "name": "",
+                "phone": "",
+                "time": undefined,
+              },
+              "setPickupTime": [Function],
+            },
+            "refs": Object {},
+            "state": Object {
+              "name": "",
+              "phone": "",
+              "submitted": false,
+              "timeError": "We need at least one hour to prepare you order",
+            },
+            "updater": Updater {
+              "_callbacks": Array [],
+              "_renderer": ReactShallowRenderer {
+                "_context": Object {},
+                "_element": <Order
+                  fillCredentials={[Function]}
+                  orders={
+                    Object {
+                      "items": Array [
+                        Object {
+                          "amount": undefined,
+                          "category": "PIZZA",
+                          "description": "test description",
+                          "price": 4,
+                          "title": "Cremeschnitte",
+                        },
+                        Object {
+                          "amount": undefined,
+                          "category": "PASTA",
+                          "description": "test description",
+                          "price": 5.5,
+                          "title": "Linguine",
+                        },
+                        Object {
+                          "amount": undefined,
+                          "category": "DESSERT",
+                          "description": "test description",
+                          "price": 7,
+                          "title": "Margherita",
+                        },
+                      ],
+                      "name": "",
+                      "phone": "",
+                      "time": undefined,
+                    }
+                  }
+                  setPickupTime={[Function]}
+                />,
+                "_forcedUpdate": false,
+                "_instance": [Circular],
+                "_newState": Object {
+                  "name": "",
+                  "phone": "",
+                  "submitted": false,
+                  "timeError": "We need at least one hour to prepare you order",
+                },
+                "_rendered": <div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={4}
+                      title="Cremeschnitte"
+                    />
+                  </div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={5.5}
+                      title="Linguine"
+                    />
+                  </div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={7}
+                      title="Margherita"
+                    />
+                  </div>
+                  <form
+                    onSubmit={[Function]}
+                  >
+                    <FormInput
+                      submitted={false}
+                      valueLink={[Circular]}
+                    />
+                    <FormInput
+                      submitted={false}
+                      valueLink={
+                        e {
+                          "component": [Circular],
+                          "error": "Phone is required",
+                          "key": "phone",
+                          "value": "",
+                        }
+                      }
+                    />
+                    <TimePicker
+                      align={
+                        Object {
+                          "offset": Array [
+                            0,
+                            -2,
+                          ],
+                        }
+                      }
+                      defaultValue={"1970-01-01T01:00:00.000Z"}
+                      disabled={false}
+                      disabledHours={undefined}
+                      disabledMinutes={undefined}
+                      disabledSeconds={undefined}
+                      focusOnOpen={true}
+                      format="HH:mm"
+                      hideDisabledOptions={false}
+                      onChange={[Function]}
+                      placement="bottomLeft"
+                      prefixCls="ant-time-picker"
+                      transitionName="slide-up"
+                    />
+                    <button
+                      href="#"
+                      id="placeOrder"
+                      type="submit"
+                    >
+                      Place Order
+                    </button>
+                  </form>
+                </div>,
+                "_rendering": false,
+                "_updater": [Circular],
+              },
+            },
+          },
+          "error": "Name is required",
+          "key": "name",
+          "value": "",
+        }
+      }
+    />
+    <FormInput
+      submitted={false}
+      valueLink={
+        e {
+          "component": Order {
+            "context": Object {},
+            "handleOrderPlacing": [Function],
+            "links": Object {
+              "name": e {
+                "component": [Circular],
+                "error": "Name is required",
+                "key": "name",
+                "value": "",
+              },
+              "phone": [Circular],
+              "submitted": e {
+                "component": [Circular],
+                "key": "submitted",
+                "value": false,
+              },
+              "timeError": e {
+                "component": [Circular],
+                "key": "timeError",
+                "value": "We need at least one hour to prepare you order",
+              },
+            },
+            "onDateChange": [Function],
+            "props": Object {
+              "fillCredentials": [Function],
+              "orders": Object {
+                "items": Array [
+                  Object {
+                    "amount": undefined,
+                    "category": "PIZZA",
+                    "description": "test description",
+                    "price": 4,
+                    "title": "Cremeschnitte",
+                  },
+                  Object {
+                    "amount": undefined,
+                    "category": "PASTA",
+                    "description": "test description",
+                    "price": 5.5,
+                    "title": "Linguine",
+                  },
+                  Object {
+                    "amount": undefined,
+                    "category": "DESSERT",
+                    "description": "test description",
+                    "price": 7,
+                    "title": "Margherita",
+                  },
+                ],
+                "name": "",
+                "phone": "",
+                "time": undefined,
+              },
+              "setPickupTime": [Function],
+            },
+            "refs": Object {},
+            "state": Object {
+              "name": "",
+              "phone": "",
+              "submitted": false,
+              "timeError": "We need at least one hour to prepare you order",
+            },
+            "updater": Updater {
+              "_callbacks": Array [],
+              "_renderer": ReactShallowRenderer {
+                "_context": Object {},
+                "_element": <Order
+                  fillCredentials={[Function]}
+                  orders={
+                    Object {
+                      "items": Array [
+                        Object {
+                          "amount": undefined,
+                          "category": "PIZZA",
+                          "description": "test description",
+                          "price": 4,
+                          "title": "Cremeschnitte",
+                        },
+                        Object {
+                          "amount": undefined,
+                          "category": "PASTA",
+                          "description": "test description",
+                          "price": 5.5,
+                          "title": "Linguine",
+                        },
+                        Object {
+                          "amount": undefined,
+                          "category": "DESSERT",
+                          "description": "test description",
+                          "price": 7,
+                          "title": "Margherita",
+                        },
+                      ],
+                      "name": "",
+                      "phone": "",
+                      "time": undefined,
+                    }
+                  }
+                  setPickupTime={[Function]}
+                />,
+                "_forcedUpdate": false,
+                "_instance": [Circular],
+                "_newState": Object {
+                  "name": "",
+                  "phone": "",
+                  "submitted": false,
+                  "timeError": "We need at least one hour to prepare you order",
+                },
+                "_rendered": <div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={4}
+                      title="Cremeschnitte"
+                    />
+                  </div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={5.5}
+                      title="Linguine"
+                    />
+                  </div>
+                  <div>
+                    <Connect(DishItem)
+                      amount={undefined}
+                      description="test description"
+                      orderPage={true}
+                      price={7}
+                      title="Margherita"
+                    />
+                  </div>
+                  <form
+                    onSubmit={[Function]}
+                  >
+                    <FormInput
+                      submitted={false}
+                      valueLink={
+                        e {
+                          "component": [Circular],
+                          "error": "Name is required",
+                          "key": "name",
+                          "value": "",
+                        }
+                      }
+                    />
+                    <FormInput
+                      submitted={false}
+                      valueLink={[Circular]}
+                    />
+                    <TimePicker
+                      align={
+                        Object {
+                          "offset": Array [
+                            0,
+                            -2,
+                          ],
+                        }
+                      }
+                      defaultValue={"1970-01-01T01:00:00.000Z"}
+                      disabled={false}
+                      disabledHours={undefined}
+                      disabledMinutes={undefined}
+                      disabledSeconds={undefined}
+                      focusOnOpen={true}
+                      format="HH:mm"
+                      hideDisabledOptions={false}
+                      onChange={[Function]}
+                      placement="bottomLeft"
+                      prefixCls="ant-time-picker"
+                      transitionName="slide-up"
+                    />
+                    <button
+                      href="#"
+                      id="placeOrder"
+                      type="submit"
+                    >
+                      Place Order
+                    </button>
+                  </form>
+                </div>,
+                "_rendering": false,
+                "_updater": [Circular],
+              },
+            },
+          },
+          "error": "Phone is required",
+          "key": "phone",
+          "value": "",
+        }
+      }
+    />
+    <TimePicker
+      align={
+        Object {
+          "offset": Array [
+            0,
+            -2,
+          ],
+        }
+      }
+      defaultValue={"1970-01-01T01:00:00.000Z"}
+      disabled={false}
+      focusOnOpen={true}
+      format="HH:mm"
+      hideDisabledOptions={false}
+      onChange={[Function]}
+      placement="bottomLeft"
+      prefixCls="ant-time-picker"
+      transitionName="slide-up"
+    />
+    <button
+      href="#"
+      id="placeOrder"
+      type="submit"
+    >
+      Place Order
+    </button>
+  </form>
+</div>
+`;
