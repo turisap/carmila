@@ -5,7 +5,7 @@ import React from 'react';
 import {removeItem, removeAllSameItems} from '../actions/orders';
 import {connect} from 'react-redux';
 
-const DishItem = (props) => (
+export const DishItem = (props) => (
     <div>
         <p>{props.title}</p>
         <p>{props.price}</p>
@@ -13,8 +13,8 @@ const DishItem = (props) => (
         {(props.amount > 0) && <p>Amount: {props.amount}</p>}
         {(props.orderPage && props.amount > 0) && (
             <div>
-                <p onClick={() => props.removeItem(props.title)}>-</p>
-                <p onClick={() => props.removeAllSameItems(props.title)}>Remove All</p>
+                <p className="dishitem__removeone" onClick={() => props.removeItem(props.title)}>-</p>
+                <p className="dishitem__removeall" onClick={() => props.removeAllSameItems(props.title)}>Remove All</p>
             </div>
         )}
     </div>

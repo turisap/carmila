@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Dish item component 1`] = `
+<div>
+  <p>
+    Al Taglio
+  </p>
+  <p>
+    6.5
+  </p>
+  <p>
+    test description
+  </p>
+  <p>
+    Amount: 
+    1
+  </p>
+  <div>
+    <p
+      className="dishitem__removeone"
+      onClick={[Function]}
+    >
+      -
+    </p>
+    <p
+      className="dishitem__removeall"
+      onClick={[Function]}
+    >
+      Remove All
+    </p>
+  </div>
+</div>
+`;
