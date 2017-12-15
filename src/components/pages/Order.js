@@ -5,16 +5,17 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { TimePicker } from 'antd';
 import moment from 'moment';
+import Link, {LinkedComponent} from 'valuelink';
+import {Input} from 'valuelink/tags';
 import DishItem from '../DishItem';
 import {setPickupTime, fillCredentials} from '../../actions/orders';
 
-class Order extends React.Component {
+class Order extends LinkedComponent {
     state = {
+        name : '',
+        phone : '',
         timeError : undefined,
-        nameError : undefined,
-        phoneError : undefined,
-        name : undefined,
-        phone : undefined
+        submitted : false
     };
 
     onDateChange = (e) => {
@@ -29,37 +30,20 @@ class Order extends React.Component {
 
     handleOrderPlacing = (e) => {
         e.preventDefault();
-        if(!this.state.timeError && !this.state.nameError && !this.state.phoneError) {
+        this.setState({submitted:true});
+        if(!this.state.timeError) {
             this.props.fillCredentials(this.state)
         }
     };
 
-    onNameChange = (e) => {
-        if (e.target.value.length <= 2){
-            this.setState({nameError: 'Name should be at least two characters long'});
-            return;
-        }
-        this.setState({nameError: ''});
-        this.setState({name:e.target.value})
-    };
-
-    onPhoneChange = (e) => {
-        if (!this.validatePhoneNumber(e.target.value)){
-            this.setState({phoneError: 'Please enter a valid phone number'});
-            return;
-        }
-        this.setState({phoneError: ''});
-        this.setState({phone:e.target.value})
-    };
-
-    validatePhoneNumber = (phone) => {
-        if (phone.length <= 2) return false;
-        return true;
-    };
-
-    checkInputs = ()
-
     render () {
+        const linked = this.linkAll();
+        const nameLink = Link.state(this, 'name')
+            .check(x => x, 'Name is required');
+        const phoneLink = Link.state(this, 'phone')
+            .check(x => x, 'Phone is required')
+            .check(x => x.match(/^[0-9]*$/), 'Phone number should be valid');
+
         return (
             <div>
                 {this.props.orders.map((item, i) => {
@@ -75,17 +59,17 @@ class Order extends React.Component {
                     )
                 })}
                 <form onSubmit={this.handleOrderPlacing}>
-                    <input name="name" type="text" onChange={this.onNameChange}/>
-                    <input name="phone" type="text" onChange={this.onPhoneChange}/>
-                    {this.state.timeError && <p className="error">{this.state.timeError}</p>}
-                    {this.state.phoneError && <p className="error">{this.state.phoneError}</p>}
-                    {this.state.nameError && <p className="error">{this.state.nameError}</p>}
+                    <FormInput valueLink={nameLink} submitted={this.state.submitted}/>
+                    <FormInput valueLink={phoneLink} submitted={this.state.submitted}/>
                     <TimePicker
                         defaultValue={moment().add(1, 'hour')}
                         format={'HH:mm'}
                         onChange={this.onDateChange}
                     />
-                    <button href="#" id="placeOrder">Place Order</button>
+                    {(this.state.timeError && this.state.submitted) && <p>{this.state.timeError}</p>}
+                    <button href="#" id="placeOrder"
+                            type="submit"
+                    >Place Order</button>
                 </form>
             </div>
 
@@ -104,5 +88,14 @@ const mapDispatchToProps = (dispatch, props) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Order);
 
-
+const FormInput = ({...props}) => {
+    return (
+        <div>
+            <Input {...props}/>
+            <div className="error-placeholder">
+                {(props.valueLink.error && props.submitted) && <p>{props.valueLink.error}</p>}
+            </div>
+        </div>
+    )
+};
 
