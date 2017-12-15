@@ -21,6 +21,15 @@ export const removeItem = (title) => ({
 });
 
 /**
+ * Removes all same items from order
+ * @param title
+ */
+export const removeAllSameItems = (title) => ({
+    type : 'REMOVE_ALL_SAME_ITEMS',
+    title
+});
+
+/**
  * Fills state with user's credentials
  * @param data
  */
@@ -37,3 +46,4 @@ export const setPickupTime = (time) => ({
     type : 'SET_PICKUP_TIME',
     time
 });
+

@@ -8,7 +8,7 @@ import moment from 'moment';
 import Link, {LinkedComponent} from 'valuelink';
 import {Input} from 'valuelink/tags';
 import DishItem from '../DishItem';
-import {setPickupTime, fillCredentials} from '../../actions/orders';
+import {setPickupTime, fillCredentials, removeItem} from '../../actions/orders';
 
 class Order extends LinkedComponent {
     state = {
@@ -46,7 +46,7 @@ class Order extends LinkedComponent {
 
         return (
             <div>
-                {this.props.orders.map((item, i) => {
+                {this.props.orders && this.props.orders.map((item, i) => {
                     return (
                         <div key={i}>
                             <DishItem
@@ -54,10 +54,12 @@ class Order extends LinkedComponent {
                                 price={item.price}
                                 description={item.description}
                                 amount={item.amount}
+                                orderPage={true}
                             />
                         </div>
                     )
                 })}
+                {(this.props.orders && this.props.orders.length > 0) &&
                 <form onSubmit={this.handleOrderPlacing}>
                     <FormInput valueLink={nameLink} submitted={this.state.submitted}/>
                     <FormInput valueLink={phoneLink} submitted={this.state.submitted}/>
@@ -71,11 +73,21 @@ class Order extends LinkedComponent {
                             type="submit"
                     >Place Order</button>
                 </form>
+                }
             </div>
 
         )
     }
 }
+
+const FormInput = ({...props}) => (
+    <div>
+        <Input {...props}/>
+        <div className="error-placeholder">
+            {(props.valueLink.error && props.submitted) && <p>{props.valueLink.error}</p>}
+        </div>
+    </div>
+);
 
 const mapStateToProps = (state) => ({
     orders : state.orders.items,
@@ -88,14 +100,6 @@ const mapDispatchToProps = (dispatch, props) => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(Order);
 
-const FormInput = ({...props}) => {
-    return (
-        <div>
-            <Input {...props}/>
-            <div className="error-placeholder">
-                {(props.valueLink.error && props.submitted) && <p>{props.valueLink.error}</p>}
-            </div>
-        </div>
-    )
-};
+
+
 

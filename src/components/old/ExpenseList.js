@@ -22,7 +22,7 @@ export const ExpenseList = (props) => {
         </div>
     )
 
-};
+}
 
 const mapStateToProps = (state) => { // explanation of how it works is in lec 101
     return {

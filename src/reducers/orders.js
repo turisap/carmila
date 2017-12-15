@@ -18,7 +18,19 @@ export default (state = orderDefaultReducerState, action) => {
             };
             break;
         case 'REMOVE_ITEM':
-            return state.items.map(item => item.title !== action.title);
+            const newState = {...state};
+            newState.items.forEach(item => {
+                if (item.title === action.title) {
+                    item.amount--
+                }
+            });
+            return newState;
+            break;
+        case 'REMOVE_ALL_SAME_ITEMS':
+            return {
+                ...state,
+                items : state.items.filter(item => item.title !== action.title)
+            };
             break;
         case 'FILL_CREDENTIALS':
             return {
