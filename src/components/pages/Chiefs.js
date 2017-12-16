@@ -4,8 +4,12 @@
 import React from 'react';
 
 const Chiefs = () => (
-    <div>
-        <p>Chiefs page</p>
+    <div className="container">
+        <div className="row">
+            <div className="col-md-6">
+
+            </div>
+        </div>
     </div>
 );
 

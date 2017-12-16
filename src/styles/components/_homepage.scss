@@ -1,0 +1,29 @@
+@import "../base/settings";
+
+#bestFood {
+  font-size: $m-size;
+  height: 60vh;
+}
+
+.bestFood__title {
+  margin-bottom: 0;
+}
+
+#homePagePhotos {
+  padding: $section_padding;
+  margin-top: $section_margin;
+}
+
+.homePagePhotos_main {
+  height: 95%;
+}
+
+.homePagePhotos_cropper {
+  height: 95%;
+  overflow: hidden;
+}
+
+.homePagePhotos_image {
+  width: 100%;
+  margin-bottom: 1rem;
+}
