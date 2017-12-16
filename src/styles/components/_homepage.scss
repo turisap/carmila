@@ -2,7 +2,12 @@
 
 #bestFood {
   font-size: $m-size;
-  height: 60vh;
+  height: 30vh;
+  margin: 2rem 0;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  justify-content:space-around;
 }
 
 .bestFood__title {
@@ -26,4 +31,13 @@
 .homePagePhotos_image {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.homePagePhotos_image:hover {
+  
+}
+
+#intro {
+  padding: $section_padding;
+  margin: $section_margin;
 }

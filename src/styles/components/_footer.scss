@@ -1,0 +1,39 @@
+@import "../base/settings";
+
+footer {
+  height: 20vh;
+  border-top: $grey-border;
+  display: flex!important;
+  margin-top: $l-size;
+}
+
+.footer__links, .footer__info {
+  margin-bottom: 0;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  font-weight: 400;
+}
+
+.footer__link:hover {
+  color:$link-hover!important;
+}
+
+.footer__links {
+  flex-grow: 1;
+  text-transform: uppercase;
+}
+
+.footer__links a {
+  color: rgba(0, 0, 0, 0.65)!important;
+}
+
+.footer__info {
+  flex-grow: 5;
+}
+
+#footer__info {
+  margin: 0;
+}
+
