@@ -3,8 +3,9 @@
  */
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-const Header = () => (
+const Header = (props) => (
     <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-right">
             <NavLink className="navbar-brand" to="/">Caldira</NavLink>
@@ -20,13 +21,19 @@ const Header = () => (
                     <li className="nav-item">
                         <NavLink activeClassName="active" className="nav-link" to="/dishes">Menu</NavLink>
                     </li>
+                    {props.haveItemsInOrder &&
                     <li className="nav-item">
                         <NavLink activeClassName="active" className="nav-link" to="/order">Order</NavLink>
                     </li>
+                    }
                 </ul>
             </div>
         </nav>
     </div>
 );
 
-export default Header;
+const mapStateToProps = (state) => ({
+    haveItemsInOrder : (state.orders.items.length > 0)
+});
+
+export default connect(mapStateToProps)(Header);

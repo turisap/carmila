@@ -5,6 +5,15 @@
 import React from 'react';
 import DishItem from '../components/DishItem';
 
+
+/**
+ * Divides a given array on chunks and puts them in a new array
+ * @param n (items in a row)
+ * @param list (array for chunking)
+ * @param orderPage
+ * @param addButton (function for adding an item)
+ * @returns {Array}
+ */
 const getRowsOfDishes = (n,list, orderPage=false, addButton) => {
     let items = [...list];
     let chunks = [[]];
@@ -17,9 +26,9 @@ const getRowsOfDishes = (n,list, orderPage=false, addButton) => {
         chunks[currentChunk].push(item);
     });
     //console.log(chunks);
-    return chunks.map(ch => {
+    return chunks.map((ch,it) => {
         return (
-            <div className="dishlist__chunkRow">
+            <div className="dishlist__chunkRow" key={`${it}c`}>
                 {ch.map((d,i) => {
                     return (
                         <div key={i} className="dishItem">

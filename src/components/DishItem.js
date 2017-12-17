@@ -2,7 +2,7 @@
  * Created by HP on 10-Dec-17.
  */
 import React from 'react';
-import {removeItem, removeAllSameItems} from '../actions/orders';
+import {removeItem, removeAllSameItems, incrementItem} from '../actions/orders';
 import {connect} from 'react-redux';
 
 export const DishItem = (props) => (
@@ -22,6 +22,7 @@ export const DishItem = (props) => (
             <div className="dishItem__buttonHolder">
                 <button className="dishitem__removeone btn btn-primary" onClick={() => props.removeItem(props.title)}>-</button>
                 <button className="dishitem__removeall btn btn-primary" onClick={() => props.removeAllSameItems(props.title)}>Remove All</button>
+                <button className="dishitem__removeone btn btn-primary" onClick={() => props.addItem(props.title)}>+</button>
             </div>
         )}
     </div>
@@ -29,7 +30,8 @@ export const DishItem = (props) => (
 
 const mapDispatchToProps = (dispatch, props) => ({
     removeItem : (title) => dispatch(removeItem(title)),
-    removeAllSameItems : (title) => dispatch(removeAllSameItems(title))
+    removeAllSameItems : (title) => dispatch(removeAllSameItems(title)),
+    addItem : (title) => dispatch(incrementItem(title))
 });
 
 

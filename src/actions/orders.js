@@ -12,6 +12,15 @@ export const addItem = (item) => ({
 });
 
 /**
+ * Increment counter of an item in order list
+ * @param title
+ */
+export const incrementItem = (title) => ({
+    type : 'INCREMENT_ITEM',
+    title
+});
+
+/**
  * Removes an item from the items array
  * @param title
  */

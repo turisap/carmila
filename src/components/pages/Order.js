@@ -7,6 +7,7 @@ import { TimePicker } from 'antd';
 import moment from 'moment';
 import Link, {LinkedComponent} from 'valuelink';
 import {Input} from 'valuelink/tags';
+import {NavLink} from 'react-router-dom'
 import getRowsOfDishes from '../../adapters/chunk';
 import {setPickupTime, fillCredentials, removeItem} from '../../actions/orders';
 
@@ -43,13 +44,20 @@ export class Order extends LinkedComponent {
         const phoneLink = Link.state(this, 'phone')
             .check(x => x, 'Phone is required')
             .check(x => x.match(/^[0-9]*$/), 'Phone number should be valid');
+        const emptyList = !this.props.orders.items.length > 0;
 
         return (
             <div>
-                <div className="container-fluid">
+                <div className={emptyList ? "orderList__holder--empty" : "container-fluid orderList__holder"}>
                     <section className="orderList">
                         {this.props.orders.items && getRowsOfDishes(3, this.props.orders.items, true)}
                     </section>
+                    { emptyList &&
+                    <div className="orderList__noItems">
+                        <h2>You haven't chosen anything yet</h2>
+                        <h2 className="error"><NavLink to="/dishes">Take A Look To The Menu</NavLink></h2>
+                    </div>
+                    }
                     <section className="orderForm">
                         {(this.props.orders.items && this.props.orders.items.length > 0) &&
                         <form onSubmit={this.handleOrderPlacing} className="orderForm__form">

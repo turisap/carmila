@@ -29,6 +29,15 @@ export default (state = orderDefaultReducerState, action) => {
             });
             return newState;
             break;
+        case 'INCREMENT_ITEM':
+            const newStater = {...state};
+            newStater.items.forEach((item,index,array) => {
+                if (item.title === action.title) {
+                    item.amount ? item.amount++ : item.amount = 1;
+                }
+            });
+            return newStater;
+            break;
         case 'REMOVE_ALL_SAME_ITEMS':
             return {
                 ...state,
