@@ -6,14 +6,14 @@ import {removeItem, removeAllSameItems} from '../actions/orders';
 import {connect} from 'react-redux';
 
 export const DishItem = (props) => (
-    <div>
+    <div className="dishItem__content">
         <div className="dishItem__cropper">
             <img src={props.path} className="dishItem__img"/>
         </div>
-        <p>{props.title}</p>
-        <p>{props.price}</p>
-        <p>{props.description}</p>
-        {(props.amount > 0) && <p>Amount: {props.amount}</p>}
+        <p><span className="lead">Title:  </span>{props.title}</p>
+        <p><span className="lead">Price:  </span>{props.price}</p>
+        <p><span className="lead">Description:  </span>{props.description}</p>
+        {(props.amount > 0) && <p><span className="lead">Amount:  </span>{props.amount}</p>}
         {(props.orderPage && props.amount > 0) && (
             <div>
                 <p className="dishitem__removeone" onClick={() => props.removeItem(props.title)}>-</p>

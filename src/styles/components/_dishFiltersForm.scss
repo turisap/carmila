@@ -18,10 +18,27 @@
 .dishes__text-filter{
   padding: 20px;
   text-align: center;
-  width: 15rem;
+  width: 33.3%;
+}
+
+.dishes__textFiltersContainer {
+  width: 70%;
 }
 
 .dishes--activeCategory{
   background: $greybackground;
   transition: all 0.5s;
+}
+
+@media (max-width: $mobiles_breakpoint) {
+  .dishes__filtersContainer {
+    flex-direction:column;
+  }
+  .dishes__textFiltersContainer {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .dishes___textDishFilter {
+    width: 100%!important;
+  }
 }

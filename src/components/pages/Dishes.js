@@ -38,7 +38,9 @@ export class Dishes extends React.Component {
                                     description={d.description}
                                     path={d.path}
                                 />
-                                <button onClick={() => this.handleAddButton(d)}>+</button>
+                                <button className="btn btn-secondary" onClick={() => this.handleAddButton(d)}>
+                                    Add to order
+                                </button>
                             </div>
                         )
                     })}
