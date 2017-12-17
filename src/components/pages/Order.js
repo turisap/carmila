@@ -7,7 +7,7 @@ import { TimePicker } from 'antd';
 import moment from 'moment';
 import Link, {LinkedComponent} from 'valuelink';
 import {Input} from 'valuelink/tags';
-import DishItem from '../DishItem';
+import getRowsOfDishes from '../../adapters/chunk';
 import {setPickupTime, fillCredentials, removeItem} from '../../actions/orders';
 
 export class Order extends LinkedComponent {
@@ -46,19 +46,7 @@ export class Order extends LinkedComponent {
 
         return (
             <div>
-                {this.props.orders && this.props.orders.items.map((item, i) => {
-                    return (
-                        <div key={i}>
-                            <DishItem
-                                title={item.title}
-                                price={item.price}
-                                description={item.description}
-                                amount={item.amount}
-                                orderPage={true}
-                            />
-                        </div>
-                    )
-                })}
+                {this.props.orders.items && getRowsOfDishes(3, this.props.orders.items, true)}
                 {(this.props.orders.items && this.props.orders.items.length > 0) &&
                 <form onSubmit={this.handleOrderPlacing}>
                     <FormInput valueLink={nameLink} submitted={this.state.submitted}/>

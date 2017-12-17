@@ -5,6 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import DishItem from './../DishItem';
 import visibleDishes from '../../selectors/visibleDishes';
+import getRowsOfDishes from '../../adapters/chunk';
 import DishesFilterForm from '../DishesFilterForm';
 import { addItem, removeItem, fillCredentials } from '../../actions/orders';
 
@@ -14,40 +15,7 @@ export class Dishes extends React.Component {
         this.props.addItemToOrder(item)
     };
 
-    getRowsOfDishes = (n) => {
-        let items = [...this.props.dishes];
-        let chunks = [[]];
-        let currentChunk = 0;
-        items.forEach((item, i) =>{
-            if (i !== 0 && (i % n === 0)) {
-                chunks.push([]);
-                currentChunk++;
-            }
-            chunks[currentChunk].push(item);
-        });
-        //console.log(chunks);
-        return chunks.map(ch => {
-            return (
-                <div className="dishlist__chunkRow">
-                    {ch.map((d,i) => {
-                        return (
-                            <div key={i} className="dishItem">
-                                <DishItem
-                                    title={d.title}
-                                    price={d.price}
-                                    description={d.description}
-                                    path={d.path}
-                                />
-                                <button className="btn btn-secondary" onClick={() => this.handleAddButton(d)}>
-                                    Add to order
-                                </button>
-                            </div>
-                        )
-                    })}
-                </div>
-            )
-        });
-    };
+
 
     render(){
         return (
@@ -63,7 +31,7 @@ export class Dishes extends React.Component {
                 </section>
                 <section className="dishList">
                     <div className="container-fluid">
-                        {this.getRowsOfDishes(3)}
+                        {getRowsOfDishes(3, this.props.dishes, false, this.handleAddButton)}
                     </div>
                 </section>
 
