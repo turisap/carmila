@@ -14,7 +14,7 @@ import DishItem from '../components/DishItem';
  * @param addButton (function for adding an item)
  * @returns {Array}
  */
-const getRowsOfDishes = (n,list, orderPage=false, addButton) => {
+const getRowsOfDishes = (n,list, orderPage=false, addButton, addedItems = []) => {
     let items = [...list];
     let chunks = [[]];
     let currentChunk = 0;
@@ -31,7 +31,7 @@ const getRowsOfDishes = (n,list, orderPage=false, addButton) => {
             <div className="dishlist__chunkRow" key={`${it}c`}>
                 {ch.map((d,i) => {
                     return (
-                        <div key={i} className="dishItem">
+                        <div key={i} className={addedItems.indexOf(d.title) >= 0 ? "dishItem orderList--added" : "dishItem"}>
                             <DishItem
                                 title={d.title}
                                 price={d.price}

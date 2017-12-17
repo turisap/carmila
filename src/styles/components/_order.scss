@@ -5,6 +5,10 @@
   margin: $big_section_margin
 }
 
+.orderList--added {
+  box-shadow: 0px 0px 10px 0px #ffbc97;
+}
+
 .orderList__holder, .orderList__holder--empty {
   min-height: 55vh;
 }

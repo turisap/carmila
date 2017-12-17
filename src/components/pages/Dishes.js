@@ -15,7 +15,9 @@ export class Dishes extends React.Component {
         this.props.addItemToOrder(item)
     };
 
-
+    getAddedTitles = () => {
+        return [...this.props.items].map(item => item.title);
+    };
 
     render(){
         return (
@@ -31,7 +33,7 @@ export class Dishes extends React.Component {
                 </section>
                 <section className="dishList">
                     <div className="container-fluid">
-                        {getRowsOfDishes(3, this.props.dishes, false, this.handleAddButton)}
+                        {getRowsOfDishes(3, this.props.dishes, false, this.handleAddButton, this.getAddedTitles())}
                     </div>
                 </section>
 
@@ -41,7 +43,8 @@ export class Dishes extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    dishes : visibleDishes(state.filter.filterBy, state.filter.text)
+    dishes : visibleDishes(state.filter.filterBy, state.filter.text),
+    items  : state.orders.items
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
