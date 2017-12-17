@@ -6,9 +6,12 @@
 
 .dishList {
   margin: 3rem 0;
+  overflow: hidden;
 }
 
 .dishlist__chunkRow {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin-right: -2%;
+
 }
