@@ -39,6 +39,20 @@
     height: 10vh;
     font-size: $s-size;
   }
+  .homePagePhotos__cropper {
+    height: 90%;
+  }
+
+}
+
+@media (max-width: $mobiles_breakpoint) {
+  #bestFood {
+    margin: $section_tablet_margin;
+    font-size: $xs-size;
+  }
+  .intro__text {
+    font-size: 12px;
+  }
   #intro {
     margin: $section_tablet_margin
   }
@@ -50,16 +64,6 @@
   }
   .homePagePhotos__column {
     padding: 0.1rem!important;
-  }
-}
-
-@media (max-width: $mobiles_breakpoint) {
-  #bestFood {
-    margin: $section_tablet_margin;
-    font-size: $xs-size;
-  }
-  .intro__text {
-    font-size: 12px;
   }
 
 }

@@ -8,8 +8,8 @@ const Footer = () => (
     <div>
         <footer>
             <ul className="footer__links">
-                <li><NavLink className="footer__link" to="/about">About Us</NavLink></li>
-                <li><NavLink className="footer__link" to="/news">Sign Up For News</NavLink></li>
+                <li><NavLink className="footer__link text-center" to="/about">About Us</NavLink></li>
+                <li><NavLink className="footer__link text-center" to="/news">Sign Up For News</NavLink></li>
             </ul>
             <ul className="footer__info">
                 <li>
