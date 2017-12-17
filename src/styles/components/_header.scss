@@ -8,6 +8,8 @@
   justify-content: center;
 }
 
+
+
 .navbar-brand {
   font-family: 'Indie Flower', cursive;
   text-transform: none;
@@ -20,5 +22,8 @@
 @media (max-width: $laptop_breakpoint) {
   .navbar-brand {
     display: none;
+  }
+  .nav-item {
+    margin-left: 0!important;
   }
 }
