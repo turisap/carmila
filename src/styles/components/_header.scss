@@ -2,7 +2,7 @@
 @import "../base/settings";
 
 
-#navbarColor03{
+#navbarColor03 {
   width: 100%!important;
   display: flex!important;
   justify-content: center;
@@ -15,4 +15,10 @@
   position: absolute;
   top:20%;
   left:2%;
+}
+
+@media (max-width: $laptop_breakpoint) {
+  .navbar-brand {
+    display: none;
+  }
 }

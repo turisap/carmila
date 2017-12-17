@@ -48,3 +48,27 @@
   margin-top: 20px;
 }
 
+@media (min-width: $mobiles_breakpoint) and (max-width: $tablet_breakpoint) {
+  .dishitem__removeone {
+    padding: 12px 22px;
+    color:red;
+  }
+  .dishitem__removeall {
+    padding: 12px 15px;
+  }
+  .dishItem__cropper {
+    height: 10vh!important;
+  }
+}
+
+/* Landscape */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px)
+and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 1) {
+  .dishItem__cropper {
+    height: 20vh!important;
+  }
+}
+

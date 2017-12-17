@@ -7,6 +7,7 @@ footer {
   margin-top: $l-size;
 }
 
+
 .footer__links, .footer__info {
   margin-bottom: 0;
   display:flex;
@@ -39,9 +40,8 @@ footer {
 
 @media (max-width: $tablet_breakpoint) {
   footer{
-    margin-top:$s-size;
     height: 250px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
   }
   .footer__info {
