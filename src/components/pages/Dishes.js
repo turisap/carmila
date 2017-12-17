@@ -14,6 +14,39 @@ export class Dishes extends React.Component {
         this.props.addItemToOrder(item)
     };
 
+    getRowsOfDishes = (n) => {
+        let items = [...this.props.dishes];
+        let chunks = [[]];
+        let currentChunk = 0;
+        items.forEach((item, i) =>{
+            if (i !== 0 && (i % n === 0)) {
+                chunks.push([]);
+                currentChunk++;
+            }
+            chunks[currentChunk].push(item);
+        });
+        //console.log(chunks);
+        return chunks.map(ch => {
+            return (
+                <div className="dishlist__chunkRow">
+                    {ch.map((d,i) => {
+                        return (
+                            <div key={i} className="dishItem">
+                                <DishItem
+                                    title={d.title}
+                                    price={d.price}
+                                    description={d.description}
+                                    path={d.path}
+                                />
+                                <button onClick={() => this.handleAddButton(d)}>+</button>
+                            </div>
+                        )
+                    })}
+                </div>
+            )
+        });
+    };
+
     render(){
         return (
             <div>
@@ -28,23 +61,7 @@ export class Dishes extends React.Component {
                 </section>
                 <section className="dishList">
                     <div className="container-fluid">
-                        <div className="dishList__container">
-                            {this.props.dishes.map((d,i) => {
-                                return (
-                                    <div>
-                                        <div key={i} className="dishItem">
-                                            <DishItem
-                                                title={d.title}
-                                                price={d.price}
-                                                description={d.description}
-                                                path={d.path}
-                                            />
-                                            <button onClick={() => this.handleAddButton(d)}>+</button>
-                                        </div>
-                                    </div>
-                                )
-                            })};
-                        </div>
+                        {this.getRowsOfDishes(3)}
                     </div>
                 </section>
 

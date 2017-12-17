@@ -8,8 +8,7 @@
   margin: 3rem 0;
 }
 
-.dishList__container {
+.dishlist__chunkRow {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
