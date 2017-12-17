@@ -31,9 +31,10 @@ const getRowsOfDishes = (n,list, orderPage=false, addButton) => {
                                 amount={d.amount}
                                 orderPage={orderPage}
                             />
-                            <button className="btn btn-secondary" onClick={() => addButton(d)}>
+                            {!orderPage &&
+                            <button className="btn btn-secondary dishItem__add-btn" onClick={() => addButton(d)}>
                                 Add to order
-                            </button>
+                            </button>}
                         </div>
                     )
                 })}

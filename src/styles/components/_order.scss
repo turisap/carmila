@@ -1,0 +1,49 @@
+@import "../base/settings";
+
+.orderList, .orderForm {
+  margin: $big_section_margin
+}
+
+.orderForm__form {
+  display: flex;
+  border: $grey-border;
+  padding : 20px;
+}
+
+.orderForm__form > * {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.orderForm__input {
+  flex-grow : 3;
+}
+
+.ant-time-picker.ant-time-picker-large {
+  margin-top: 10px;
+  width: 5%!important;
+}
+
+#placeOrder {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+@media(max-width: $mobiles_breakpoint) {
+  .orderForm__form {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .orderForm__form > * {
+    margin-right: 0;
+    margin-top: 10px!important;
+  }
+  .ant-time-picker.ant-time-picker-large {
+    margin-top: 0;
+    width: 100%!important;
+  }
+  #placeOrder {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}

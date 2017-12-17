@@ -7,6 +7,7 @@
   margin-right: 2%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .dishItem__img {
@@ -21,7 +22,29 @@
 
 .dishItem__content {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   align-items: center;
+}
+
+.dishItem__description {
+  padding: 10px;
+  text-align: justify;
+}
+
+.dishItem__add-btn {
+
+}
+.dishItem__buttonHolder {
+  margin-top: auto;
+  margin-bottom: 10px;
+}
+
+.dishItem__amount {
+  margin-top: auto;
+}
+
+.dishItem__title {
+  margin-top: 20px;
 }
 

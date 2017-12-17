@@ -46,22 +46,39 @@ export class Order extends LinkedComponent {
 
         return (
             <div>
-                {this.props.orders.items && getRowsOfDishes(3, this.props.orders.items, true)}
-                {(this.props.orders.items && this.props.orders.items.length > 0) &&
-                <form onSubmit={this.handleOrderPlacing}>
-                    <FormInput valueLink={nameLink} submitted={this.state.submitted}/>
-                    <FormInput valueLink={phoneLink} submitted={this.state.submitted}/>
-                    <TimePicker
-                        defaultValue={moment().add(1, 'hour')}
-                        format={'HH:mm'}
-                        onChange={this.onDateChange}
-                    />
-                    {(this.state.timeError && this.state.submitted) && <p>{this.state.timeError}</p>}
-                    <button href="#" id="placeOrder"
-                            type="submit"
-                    >Place Order</button>
-                </form>
-                }
+                <div className="container-fluid">
+                    <section className="orderList">
+                        {this.props.orders.items && getRowsOfDishes(3, this.props.orders.items, true)}
+                    </section>
+                    <section className="orderForm">
+                        {(this.props.orders.items && this.props.orders.items.length > 0) &&
+                        <form onSubmit={this.handleOrderPlacing} className="orderForm__form">
+                            <FormInput
+                                valueLink={nameLink}
+                                submitted={this.state.submitted}
+                                className="form-control orderForm__input"
+                                placeholder="Your name"
+                            />
+                            <FormInput
+                                valueLink={phoneLink}
+                                submitted={this.state.submitted}
+                                className="form-control orderForm__input"
+                                placeholder="Your phone"
+                            />
+                            <TimePicker
+                                defaultValue={moment().add(1, 'hour')}
+                                format={'HH:mm'}
+                                onChange={this.onDateChange}
+                                size="large"
+                            />
+                            <button href="#" id="placeOrder" type="submit" className="btn btn-default">
+                                Place Order
+                            </button>
+                        </form>
+                        }
+                        {(this.state.timeError && this.state.submitted) && <p className="error">{this.state.timeError}</p>}
+                    </section>
+                </div>
             </div>
 
         )
@@ -72,7 +89,7 @@ const FormInput = ({...props}) => (
     <div>
         <Input {...props}/>
         <div className="error-placeholder">
-            {(props.valueLink.error && props.submitted) && <p>{props.valueLink.error}</p>}
+            {(props.valueLink.error && props.submitted) && <p className="error">{props.valueLink.error}</p>}
         </div>
     </div>
 );

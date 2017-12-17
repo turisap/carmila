@@ -10,14 +10,18 @@ export const DishItem = (props) => (
         <div className="dishItem__cropper">
             <img src={props.path} className="dishItem__img"/>
         </div>
-        <p><span className="lead">Title:  </span>{props.title}</p>
-        <p><span className="lead">Price:  </span>{props.price}</p>
-        <p><span className="lead">Description:  </span>{props.description}</p>
-        {(props.amount > 0) && <p><span className="lead">Amount:  </span>{props.amount}</p>}
+        <h4 className="dishItem__title">{props.title}</h4>
+        {props.orderPage ?
+            <p><span className="lead">Price:  </span>{props.price * props.amount}</p>
+            :
+            <p><span className="lead">Price:  </span>{props.price}</p>
+        }
+        <p className="dishItem__description">{props.description}</p>
+        {(props.amount > 0) && <p className="dishItem__amount"><span className="lead">Amount:  </span>{props.amount}</p>}
         {(props.orderPage && props.amount > 0) && (
-            <div>
-                <p className="dishitem__removeone" onClick={() => props.removeItem(props.title)}>-</p>
-                <p className="dishitem__removeall" onClick={() => props.removeAllSameItems(props.title)}>Remove All</p>
+            <div className="dishItem__buttonHolder">
+                <button className="dishitem__removeone btn btn-primary" onClick={() => props.removeItem(props.title)}>-</button>
+                <button className="dishitem__removeall btn btn-primary" onClick={() => props.removeAllSameItems(props.title)}>Remove All</button>
             </div>
         )}
     </div>

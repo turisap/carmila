@@ -5,6 +5,7 @@
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: $m-size;
+  overflow-x: hidden;
 }
 
 button {
@@ -17,6 +18,10 @@ button:disabled {
 
 .is-active {
   font-weight: bold;
+}
+
+.error {
+  color : #a90000;
 }
 
 
