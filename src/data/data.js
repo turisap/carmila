@@ -13,6 +13,7 @@ export const dishes = [
         title: '4 Cheeses',
         price: 5.5,
         description : 'test description',
+        path : 'img/dishes/4chesses.jpg',
         amount : undefined
     },
     {
@@ -20,6 +21,7 @@ export const dishes = [
         title: 'Margherita',
         price: 7,
         description : 'test description',
+        path : 'img/dishes/margarita.jpg',
         amount : undefined
     },
     {
@@ -27,6 +29,7 @@ export const dishes = [
         title: 'Al Taglio',
         price: 6.5,
         description : 'test description',
+        path : 'img/dishes/altagila.jpg',
         amount : undefined
     },
     {
@@ -34,6 +37,7 @@ export const dishes = [
         title: 'Quattro',
         price: 6,
         description : 'test description',
+        path : 'img/dishes/quatro.jpg',
         amount : undefined
     },
     {
@@ -41,6 +45,7 @@ export const dishes = [
         title: 'Ravioli',
         price: 6.5,
         description : 'test description',
+        path : 'img/dishes/ravioli.jpg',
         amount : undefined
     },
     {
@@ -48,6 +53,7 @@ export const dishes = [
         title: 'Fettuccini',
         price: 6.5,
         description : 'test description',
+        path : 'img/dishes/fetuccini.jpeg',
         amount : undefined
     },
     {
@@ -55,6 +61,7 @@ export const dishes = [
         title: 'Rigatoni',
         price: 7,
         description : 'test description',
+        path : 'img/dishes/rigatoni.jpg',
         amount : undefined
     },
     {
@@ -62,6 +69,7 @@ export const dishes = [
         title: 'Linguine',
         price: 5.5,
         description : 'test description',
+        path : 'img/dishes/linguine.jpg',
         amount : undefined
     },
     {
@@ -69,6 +77,7 @@ export const dishes = [
         title: 'Penne',
         price: 7.5,
         description : 'test description',
+        path : 'img/dishes/penne.jpg',
         amount : undefined
     },
     {
@@ -76,6 +85,7 @@ export const dishes = [
         title: 'Serradura',
         price: 4,
         description : 'test description',
+        path : 'img/dishes/serradura.jpg',
         amount : undefined
     },
     {
@@ -83,6 +93,7 @@ export const dishes = [
         title: 'Clafoutis',
         price: 4.5,
         description : 'test description',
+        path : 'img/dishes/clafouits.jpg',
         amount : undefined
     },
     {
@@ -90,6 +101,7 @@ export const dishes = [
         title: 'Cremeschnitte',
         price: 4,
         description : 'test description',
+        path : 'img/dishes/cremeshnitte.jpg',
         amount : undefined
     },
     {
@@ -97,6 +109,7 @@ export const dishes = [
         title: 'Crema Catalana',
         price: 5,
         description : 'test description',
+        path : 'img/dishes/crema_catalana.jpg',
         amount : undefined
     },
     {
@@ -104,6 +117,7 @@ export const dishes = [
         title: 'Crêpe Suzette',
         price: 6,
         description : 'test description',
+        path : 'img/dishes/crepe.jpg',
         amount : undefined
     },
 ];

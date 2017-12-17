@@ -7,6 +7,9 @@ import {connect} from 'react-redux';
 
 export const DishItem = (props) => (
     <div>
+        <div className="dishItem__cropper">
+            <img src={props.path} className="dishItem__img"/>
+        </div>
         <p>{props.title}</p>
         <p>{props.price}</p>
         <p>{props.description}</p>

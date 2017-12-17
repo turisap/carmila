@@ -1,0 +1,15 @@
+@import "../base/settings";
+
+.dishesFilterForm {
+  margin: $big_section_margin;
+}
+
+.dishList {
+  margin: 3rem 0;
+}
+
+.dishList__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

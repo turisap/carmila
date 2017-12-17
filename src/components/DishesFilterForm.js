@@ -32,13 +32,16 @@ export class DishesFilterForm extends React.Component {
 
     render () {
         return (
-            <div>
-                <input type="text" onKeyDown={this.handleFilterTextChange}/>
-                {categories.map((c,i) => {
-                    return (
-                        <a key={i} className={c.toLowerCase() === this.state.activeLink ? 'active-category' : ''} onClick={this.handleCategoryChange}>{c}</a>
-                    )
-                })}
+            <div className="dishes__filtersContainer">
+                <input className="form-control dishes___textDishFilter" placeholder="Type what you wish" type="text" onKeyDown={this.handleFilterTextChange}/>
+
+                <div className="dishes__textFiltersContainer">
+                    {categories.map((c,i) => {
+                        return (
+                            <a key={i} className={c.toLowerCase() === this.state.activeLink ? 'dishes--activeCategory dishes__text-filter' : 'dishes__text-filter'} onClick={this.handleCategoryChange}>{c}</a>
+                        )
+                    })}
+                </div>
             </div>
         )
     }

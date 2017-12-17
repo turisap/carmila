@@ -17,19 +17,37 @@ export class Dishes extends React.Component {
     render(){
         return (
             <div>
-                <DishesFilterForm/>
-                {this.props.dishes.map((d,i) => {
-                    return (
-                        <div key={i}>
-                            <DishItem
-                                title={d.title}
-                                price={d.price}
-                                description={d.description}
-                            />
-                            <button onClick={() => this.handleAddButton(d)}>+</button>
+                <section className="dishesFilterForm">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <DishesFilterForm/>
+                            </div>
                         </div>
-                    )
-                })};
+                    </div>
+                </section>
+                <section className="dishList">
+                    <div className="container-fluid">
+                        <div className="dishList__container">
+                            {this.props.dishes.map((d,i) => {
+                                return (
+                                    <div>
+                                        <div key={i} className="dishItem">
+                                            <DishItem
+                                                title={d.title}
+                                                price={d.price}
+                                                description={d.description}
+                                                path={d.path}
+                                            />
+                                            <button onClick={() => this.handleAddButton(d)}>+</button>
+                                        </div>
+                                    </div>
+                                )
+                            })};
+                        </div>
+                    </div>
+                </section>
+
             </div>
         )
     }
