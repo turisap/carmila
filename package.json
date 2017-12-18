@@ -17,7 +17,7 @@
     "dev-server": "webpack-dev-server",
     "test": "jest --watchAll --config=jest.config.json",
     "start": "node server/server.js",
-    "heroku-postbuild": "npm install build:prod"
+    "heroku-postbuild": "npm install"
   },
   "dependencies": {
     "antd": "^3.0.0",
