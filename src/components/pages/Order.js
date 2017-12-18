@@ -49,6 +49,12 @@ export class Order extends LinkedComponent {
         return (
             <div>
                 <div className={emptyList ? "orderList__holder--empty" : "container-fluid orderList__holder"}>
+                    <section className="orderList__heading" style={{visibility: emptyList ? 'hidden' : ''}}>
+                        <div className="container-fluid">
+                            <h2 className="page-header">We are happy to serve food for you</h2>
+                            <hr/>
+                        </div>
+                    </section>
                     <section className="orderList">
                         {this.props.orders.items && getRowsOfDishes(3, this.props.orders.items, true)}
                     </section>
