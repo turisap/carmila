@@ -5,7 +5,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-const Header = (props) => (
+export const Header = (props) => (
     <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-right">
             <NavLink className="navbar-brand" to="/">Caldira</NavLink>

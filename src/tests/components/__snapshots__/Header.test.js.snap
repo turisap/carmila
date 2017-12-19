@@ -11,30 +11,17 @@ exports[`should render Header properly 1`] = `
       className="navbar-brand"
       to="/"
     >
-      C
+      Caldira
     </NavLink>
-    <button
-      aria-controls="navbarColor03"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      className="navbar-toggler"
-      data-target="#navbarColor03"
-      data-toggle="collapse"
-      type="button"
-    >
-      <span
-        className="navbar-toggler-icon"
-      />
-    </button>
     <div
       className="collapse navbar-collapse"
       id="navbarColor03"
     >
       <ul
-        className="navbar-nav mr-auto"
+        className="navbar-nav"
       >
         <li
-          className="nav-item active"
+          className="nav-item"
         >
           <NavLink
             activeClassName="active"
@@ -52,33 +39,9 @@ exports[`should render Header properly 1`] = `
             activeClassName="active"
             ariaCurrent="true"
             className="nav-link"
-            to="/chiefs"
-          >
-            Chiefs
-          </NavLink>
-        </li>
-        <li
-          className="nav-item"
-        >
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            className="nav-link"
             to="/dishes"
           >
-            Dishes
-          </NavLink>
-        </li>
-        <li
-          className="nav-item"
-        >
-          <NavLink
-            activeClassName="active"
-            ariaCurrent="true"
-            className="nav-link"
-            to="/order"
-          >
-            Order
+            Menu
           </NavLink>
         </li>
       </ul>

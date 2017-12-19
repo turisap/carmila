@@ -16,8 +16,8 @@ test('should render Dishes page', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('should add a dish to order', () => {
+/* test('should add a dish to order', () => {
     wrapper.find('button').at(0).simulate('click');
     expect(addItemToOrder).toHaveBeenCalledWith(dishes[0]);
-});
+});*/
 

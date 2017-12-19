@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { shallow } from 'enzyme';
-import Header from '../../components/pages/Header';
+import {Header} from '../../components/pages/Header';
 
 test('should render Header properly', () => {
     const wrapper = shallow(<Header/>);
