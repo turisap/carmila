@@ -5,7 +5,8 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 
 const Footer = () => (
-    <div>
+    <div className="footer__fix">
+
         <footer>
             <ul className="footer__links">
                 <li><NavLink className="footer__link text-center" to="/about">About Us</NavLink></li>
