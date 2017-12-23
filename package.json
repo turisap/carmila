@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React.js front-end application for a restaurant",
   "main": "index.js",
-  "author": "Tirip",
+  "author": "turisap",
   "license": "MIT",
   "private": null,
   "engines": {
